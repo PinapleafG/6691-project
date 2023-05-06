@@ -37,8 +37,6 @@ class SwinUnet(nn.Module):
                                             depths_decoder=self.depths_decoder,
                                             num_heads=self.num_heads,
                                             drop_rate=self.dropout)
-        
-        # self.desc_encoder = nn.Linear(clip_dim, clip_dim, bias=False).cuda()
                                 
     def forward(self, x, desc_feat):
         # desc_feat = self.desc_encoder(desc_feat)

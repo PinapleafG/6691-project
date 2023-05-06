@@ -15,6 +15,8 @@ def get_parser():
                         default='data', help='train mask path')
     parser.add_argument('--description_path', type=str,
                         default='data', help='description path')
+    parser.add_argument('--checkpoint_path', type=str, default='checkpoints/best_model.pth',
+                        help='contrastive learning mode')
     
     parser.add_argument('--img_size', type=int,
                         default=224, help='input image size')
@@ -47,8 +49,8 @@ def get_parser():
                         help='num_heads of transformer')
     parser.add_argument('--seed', type=int,
                         default=1234, help='random seed')
-    parser.add_argument('--contrast', action='store_true', 
-                        help='use contrastive learning')
+    parser.add_argument('--contrast', type=str, default='False',
+                        help='contrastive learning mode')
 
     parser.add_argument('--zip', action='store_true', help='use zipped dataset instead of folder dataset')
     parser.add_argument('--cache-mode', type=str, default='part', choices=['no', 'full', 'part'],

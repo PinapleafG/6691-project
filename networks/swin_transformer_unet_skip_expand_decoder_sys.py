@@ -11,6 +11,7 @@ def img_text_similarlity(img_feat, text_feat, scale):
         text_feat: (num_class, num_desc, embedding_dim)
         scale: scalar
         '''
+        text_feat = text_feat.reshape(text_feat.shape[0], -1, text_feat.shape[-1])
         num_class, num_desc, embedding_dim = text_feat.shape
         
         # flatten features

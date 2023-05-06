@@ -5,6 +5,7 @@ CUDA_VISIBLE_DEVICES=2 python train.py \
     --valid_img_path 'single_object/data/valid_img' \
     --valid_mask_path 'single_object/data/valid_mask' \
     --description_path 'gpt3.5_output.json' \
+    --checkpoint_path 'checkpoints/best_model.pth' \
     --img_size 224 \
     --num_classes 2 \
     --epochs 200 \

@@ -60,8 +60,14 @@ def make_desc_features(desc_path, clip_model, device):
             description = v["features"]
             token = clip.tokenize(description).to(device)
             feat = clip_model.encode_text(token).cpu().numpy()
+
+            class_desc = f"A photo of a {k}"
+            token = clip.tokenize(class_desc).to(device)
+            class_feat = clip_model.encode_text(token).cpu().numpy()
+
             desc_feat[k] = {}
             desc_feat[k]["features"] = feat
+            desc_feat[k]["description"] = class_feat
             desc_feat[k]["class"] = class_idx
             class_idx += 1
 
