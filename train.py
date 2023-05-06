@@ -58,11 +58,18 @@ net = SwinUnet(img_size=args.img_size,
                 depths_enoder=args.depths_encoder,
                 depths_decoder=args.depths_decoder,
                 num_heads=args.num_heads,
-                num_classes=args.num_classes).to(device)
+                num_classes=args.num_classes,
+                dropout=args.dropout).to(device)
 
 dice_loss = DiceLoss(n_classes=args.num_classes)
 ce_loss = nn.CrossEntropyLoss()
 optimizer = torch.optim.AdamW(net.parameters(), lr=args.base_lr)
+scheduler = torch.optim.lr_scheduler.StepLR(
+    optimizer, 
+    step_size=args.step_size, 
+    gamma=args.lr_decay,
+    last_epoch=-1
+)
 
 ## train
 min_val_iou = 0x7fffffff
@@ -114,6 +121,7 @@ for epoch in range(args.epochs):
                 .format(epoch, train_loss, train_dice, train_hd95, train_f1, train_iou))
     # logger.info("Epoch: {} Training Loss: {:.4f} F1: {:.4f} IoU: {:.4f}"\
     #             .format(epoch, train_loss, train_f1, train_iou)) 
+    scheduler.step()
 
     valid_loss = 0
     valid_dice = []
