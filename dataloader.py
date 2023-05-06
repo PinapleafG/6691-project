@@ -36,10 +36,12 @@ class VOC_Dataset(Dataset):
                 
                 cur_img = cv.resize(cur_img / 255.0, self.img_size).transpose((2, 0, 1))
                 cur_mask = cv.resize(cur_mask / 255.0, self.img_size).transpose((2, 0, 1))
-                ## load description
-                cur_desc = self.desc_dict[c]['features']
+                
                 cur_class = self.desc_dict[c]['class']
-                self.data.append({"img": cur_img, "mask": cur_mask[0], "desc": cur_desc, "class": cur_class})
+
+                self.data.append({"class": cur_class,
+                                  "img": cur_img, 
+                                  "mask": cur_mask[0]})
 
     def __len__(self):
         return len(self.data)
@@ -48,10 +50,10 @@ class VOC_Dataset(Dataset):
         cur_data = self.data[idx]
         cur_img = cur_data["img"]
         cur_mask = cur_data["mask"]
-        cur_desc = cur_data["desc"]
         cur_class = cur_data["class"]
+
         if self.transform:
             cur_img = self.transform(cur_img)
             cur_mask = self.transform(cur_mask)
 
-        return cur_img, cur_mask, cur_desc, cur_class
+        return cur_class, cur_img, cur_mask
