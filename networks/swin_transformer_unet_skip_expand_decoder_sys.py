@@ -664,7 +664,8 @@ class SwinTransformerSys(nn.Module):
         
         # build language image projection layers
         self.img_text_feat = []
-        self.img_text_proj = [nn.Linear(embed_dim*patches_resolution[0]*patches_resolution[1] // (2**i), 768, bias=False).cuda()
+        self.global_pool = nn.AdaptiveAvgPool2d((1, 1))
+        self.img_text_proj = [nn.Linear(embed_dim*2**i, 768, bias=False).cuda()
                                 for i in range(self.num_layers)]
 
         # build decoder layers
@@ -733,12 +734,11 @@ class SwinTransformerSys(nn.Module):
             x= layer(x)
         x = self.norm(x)  # B L C
 
-        img_text_feat = []
+        self.img_text_feat = []
 
         for i in range(len(x_downsample)):
-            img_text_feat.append(self.img_text_proj[i](x_downsample[i].reshape(batch,-1)))
-        
-        self.img_text_feat = img_text_feat
+            global_feat = torch.mean(x_downsample[i], dim=1)
+            self.img_text_feat.append(self.img_text_proj[i](global_feat))
         
         return x, x_downsample
 

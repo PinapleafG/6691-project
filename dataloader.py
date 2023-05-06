@@ -24,18 +24,18 @@ class VOC_Dataset(Dataset):
             for img in os.listdir(cur_class_path):
                 cur_img_path = os.path.join(cur_class_path, img)
                 cur_mask_path = os.path.join(self.mask_path, c, img)
-                ## load image
+                ## load image and mask
                 cur_img = cv.imread(cur_img_path)
-                ## load mask
                 cur_mask = cv.imread(cur_mask_path)
+
                 ## convert colors
                 mask_a = np.all(cur_mask == self.color_a, axis=2)
                 cur_mask[mask_a] = self.color_b
                 mask_other = np.logical_not(np.logical_or(mask_a, np.all(cur_mask == self.color_b, axis=2)))
                 cur_mask[mask_other] = self.white
-
-                cur_img = cv.resize(cur_img / 255, self.img_size).transpose((2, 0, 1))
-                cur_mask = cv.resize(cur_mask / 255, self.img_size).transpose((2, 0, 1))
+                
+                cur_img = cv.resize(cur_img / 255.0, self.img_size).transpose((2, 0, 1))
+                cur_mask = cv.resize(cur_mask / 255.0, self.img_size).transpose((2, 0, 1))
                 ## load description
                 cur_desc = self.desc_dict[c]['features']
                 cur_class = self.desc_dict[c]['class']
