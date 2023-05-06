@@ -28,6 +28,14 @@ def get_parser():
                         default=24, help='batch_size per gpu')
     parser.add_argument('--base_lr', type=float,  default=0.01,
                         help='segmentation network learning rate')
+    parser.add_argument('--step_size', 
+                        default=20, type=int, metavar='LRSteps', 
+                        help='epochs to decay learning rate')
+    parser.add_argument('--lr_decay',
+                        default=0.65, type=float,
+                        help='learning weight decay')
+    parser.add_argument('--dropout', type=float,  default=0.1,
+                        help='dropout rate')
     parser.add_argument('--depths_encoder', 
                         default=[2,2,2,2], type=int, nargs="+", metavar='N', 
                         help='depths of encoder')
