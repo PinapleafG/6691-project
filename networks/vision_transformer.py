@@ -38,10 +38,10 @@ class SwinUnet(nn.Module):
                                             num_heads=self.num_heads,
                                             drop_rate=self.dropout)
         
-        self.desc_encoder = nn.Linear(clip_dim, clip_dim, bias=False).cuda()
+        # self.desc_encoder = nn.Linear(clip_dim, clip_dim, bias=False).cuda()
                                 
     def forward(self, x, desc_feat):
-        desc_feat = self.desc_encoder(desc_feat)
+        # desc_feat = self.desc_encoder(desc_feat)
         logits, img_text_logits = self.swin_unet(x, desc_feat)
         return logits, img_text_logits
  

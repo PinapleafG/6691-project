@@ -124,14 +124,17 @@ def accuracy(output, gt):
     for i in range(output.shape[0]):
         intersection = np.logical_and(output[i], gt[i])
         union = np.logical_or(output[i], gt[i])
-        iou.append((np.sum(intersection)+1e-8)/ (np.sum(union)+1e-8))
+        iou.append(intersection.sum() / union.sum())
     
     ## calculate F1 score
     f1_score = []
     for i in range(output.shape[0]):
         precision = metric.binary.precision(output[i], gt[i])
         recall = metric.binary.recall(output[i], gt[i])
-        f1 = (2*(precision*recall)+1e-8) / (precision+recall+1e-8)
+        if precision+recall == 0:
+            f1 = 0
+        else:
+            f1 = 2*(precision*recall) / (precision+recall)
         f1_score.append(f1)
 
     return dice, hd95, iou, f1_score
