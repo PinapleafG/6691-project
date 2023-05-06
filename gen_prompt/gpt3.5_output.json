@@ -1,0 +1,182 @@
+{
+    "person": {
+        "features": [
+            "a head with facial features such as eyes, nose, and mouth",
+            "a body with limbs such as arms and legs",
+            "clothing and accessories such as hats, glasses, and jewelry",
+            "skin color and texture",
+            "hair color and style"
+        ]
+    },
+    "chair": {
+        "features": [
+            "a seat with a backrest",
+            "legs or a base to support the seat",
+            "armrests (if present)",
+            "a distinct shape or design",
+            "materials used in construction (e.g. wood, metal, plastic, etc.)"
+        ]
+    },
+    "bus": {
+        "features": [
+            "large, rectangular shape with a flat roof",
+            "multiple windows along the sides",
+            "wheels and tires visible on the bottom",
+            "front and rear doors for passengers to enter and exit",
+            "often has a destination sign or route number displayed on the front or side."
+        ]
+    },
+    "pottedplant": {
+        "features": [
+            "green leaves or foliage",
+            "stems or branches",
+            "soil or potting mix in a container or pot",
+            "flowers or buds (if applicable)",
+            "size and shape of the plant and its container"
+        ]
+    },
+    "bicycle": {
+        "features": [
+            "two wheels",
+            "a frame with a seat and handlebars",
+            "pedals and a chain",
+            "brakes and gears",
+            "tires with spokes and rims"
+        ]
+    },
+    "cat": {
+        "features": [
+            "four-legged mammal with fur",
+            "pointed ears",
+            "sharp claws",
+            "slit-shaped pupils in their eyes",
+            "flexible tail"
+        ]
+    },
+    "aeroplane": {
+        "features": [
+            "a livery or paint scheme",
+            "engines mounted on the wings",
+            "landing gear with wheels and tires",
+            "a fuselage with a pointed nose",
+            "wings and tail fin. However, an aeroplane may be smaller and have a different design than an airliner."
+        ]
+    },
+    "tvmonitor": {
+        "features": [
+            "rectangular or square shape",
+            "flat screen display",
+            "black or silver bezel around the screen",
+            "power button and other control buttons on the front or side",
+            "cables or ports on the back for connecting to other devices."
+        ]
+    },
+    "cow": {
+        "features": [
+            "four-legged mammal with hooves",
+            "large, rounded body with a hump on the back (in some breeds)",
+            "udder (in females)",
+            "horns (in some breeds)",
+            "black, white, brown, or spotted coat"
+        ]
+    },
+    "sofa": {
+        "features": [
+            "a rectangular or L-shaped frame",
+            "upholstered cushions or padding",
+            "armrests on either side",
+            "a backrest for support",
+            "legs or a base to elevate the sofa off the ground."
+        ]
+    },
+    "diningtable": {
+        "features": [
+            "a flat surface for placing dishes and utensils",
+            "legs or a pedestal to support the surface",
+            "chairs or seating around the table",
+            "tablecloth or placemats",
+            "decorations or centerpieces on the table."
+        ]
+    },
+    "car": {
+        "features": [
+            "four wheels",
+            "a windshield and windows",
+            "a metal body with doors",
+            "headlights and taillights",
+            "a steering wheel and dashboard inside the car."
+        ]
+    },
+    "bird": {
+        "features": [
+            "feathers covering the body",
+            "beak or bill",
+            "wings for flight",
+            "two legs with claws or talons",
+            "often brightly colored or patterned plumage"
+        ]
+    },
+    "boat": {
+        "features": [
+            "hull shape and color",
+            "type of boat (sailboat, motorboat, canoe, etc.)",
+            "number and placement of masts, sails, and rigging (for sailboats)",
+            "size and shape of the bow and stern",
+            "presence of a cabin or cockpit."
+        ]
+    },
+    "bottle": {
+        "features": [
+            "cylindrical or rectangular shape",
+            "neck and cap or cork",
+            "transparent or opaque material",
+            "label or branding",
+            "liquid or contents visible inside the bottle"
+        ]
+    },
+    "horse": {
+        "features": [
+            "four-legged mammal with a long, flowing mane and tail",
+            "large, muscular body with a prominent chest and hindquarters",
+            "long, slender legs with hooves",
+            "pointed ears and a long, narrow face",
+            "various coat colors and patterns, such as brown, black, white, or spotted."
+        ]
+    },
+    "motorbike": {
+        "features": [
+            "two-wheeled vehicle",
+            "engine and exhaust system",
+            "handlebars for steering",
+            "seat for the rider",
+            "wheels with tires and brakes"
+        ]
+    },
+    "sheep": {
+        "features": [
+            "woolly coat that can be white, black, brown, or grey",
+            "four-legged mammal with hooves",
+            "curved horns (in some breeds)",
+            "long, droopy ears",
+            "fluffy tail"
+        ]
+    },
+    "dog": {
+        "features": [
+            "four-legged mammal",
+            "fur or hair covering the body",
+            "snout or muzzle",
+            "ears that stand up or flop down",
+            "tail that may be curled or straight"
+        ]
+    },
+    "train": {
+        "features": [
+            "long, cylindrical shape with multiple cars or carriages",
+            "tracks or railway lines visible in the photo",
+            "locomotive or engine at the front of the train",
+            "smokestack or exhaust visible on the engine",
+            "wheels and axles visible on the cars or carriages."
+        ]
+    }
+}
