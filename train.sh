@@ -1,5 +1,5 @@
 CUDA_VISIBLE_DEVICES=2 python train.py \
-    --model_name 'no_contrast' \
+    --model_name 'feature_contrast' \
     --train_img_path 'single_object/data/train_img' \
     --train_mask_path 'single_object/data/train_mask' \
     --valid_img_path 'single_object/data/valid_img' \
